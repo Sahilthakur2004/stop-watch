@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+< lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out{
+          
+           width:90%;
+           height: 1000px;
+           background-color: black;
+        }
+        .in{
+            display: flex;
+            justify-content: center;
+        }
+        .main{
+            padding-left: 3rem;
+            padding-right:3rem ;
+            border: 3px yellow solid;
+
+            display:flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            background-color: gray;
+            border-radius:20px;
+        }
+        #clock{
+            border:3px black dotted;
+            text-align: center;
+            font-size: 5rem;
+            color: red;
+            background-color: black;
+            border-radius:20px;
+        }
+        #gettime{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<input>
+    <div class="out">
+        <div class="in">
+            <div class="main">
+              <p id="clock">0</p>
+               <button id="start" style="color: red; background-color: black; border-radius:30px;">Start</button>
+               <button id="reset" style="color: red; background-color: black; border-radius:30px"> Reset</button>
+                <button id="stop1" style="color: red; background-color: black; border-radius:30px">Stop </button>
+                <button id="getTime" style="color: red; background-color: black; border-radius:30px">GetTime</button>
+                <button id="clearTime" style="color: red; background-color: black; border-radius:30px">ClearTime</button>
+                <div class="gettime">
+                 
+                </div>
+                
+            </div>
+        </div>
+    </div>
+ 
+    <script>
+         const hell= document.querySelector(".gettime");
+         var con="0";
+        
+        var time1=()=>{
+        // const ime = new Date().getSeconds();
+        // console.log(ime);
+        // let time= (ime.toLocaleTimeString());
+        // let con = time.ge
+        // console.log(time);
+        // 
+        // ;
+       
+        con++;
+              console.log( con);
+              document.getElementById("clock").innerText=con;
+    }
+    const getttime=()=>{
+        const newPara= document.createElement("p");
+        newPara.innerText=`The stop time is ${con}`;
+        hell.append(newPara);
+
+    }
+   
+    start.addEventListener("click",(event)=>{
+     lets = setInterval(time1,1000);
+    })
+    stop1.addEventListener("click",(event)=>{
+
+    clearInterval(lets);});
+
+    reset.addEventListener("click",()=>{
+        clearInterval(lets);
+        document.getElementById("clock").innerText="0";
+        con="0";   
+     });
+       
+        console.log(hell);
+
+     getTime.addEventListener("click",()=>{
+        getttime();
+      })
+    clearTime.addEventListener("click",()=>{    
+        hell.innerText=" ";
+
+        
+    })
+ 
+
+
+    </script>
+</body>
+</html>
